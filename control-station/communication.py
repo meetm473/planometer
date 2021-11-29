@@ -156,4 +156,7 @@ class Comm:
 			msg : str
 				Message string received by the node.
 		"""
-		pass
+		if msg[0] == "#":
+			print("Received GPS coordinates")
+		else:
+			print(msg)

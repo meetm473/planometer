@@ -20,7 +20,7 @@ class ControlStation(QMainWindow, gui.Ui_main_window):
 
 		logging.basicConfig(level=logging.DEBUG)
 
-		self.comm = Comm("192.168.103.70")
+		self.comm = Comm("192.168.137.233")
 		self.comm.setupComm()
 
 		self.left_velocity = 0
@@ -93,7 +93,10 @@ class ControlStation(QMainWindow, gui.Ui_main_window):
 		print("Estimating area...")
 	
 	def onSendBtnClicked(self):
-		self.sendInstructions(instruction="PING")
+		if(self.cmd_tf.text() == ""):
+			self.sendInstructions(instruction="PING")
+		else:
+			self.sendInstructions(instruction=self.cmd_tf.text())
 
 	def sendInstructions(self, instruction="!", is_velocity=False):
 		data = instruction

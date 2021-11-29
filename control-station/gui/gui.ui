@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>710</width>
-    <height>381</height>
+    <height>398</height>
    </rect>
   </property>
   <property name="font">
@@ -156,19 +156,13 @@
       <x>10</x>
       <y>300</y>
       <width>291</width>
-      <height>71</height>
+      <height>89</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="cmd_send_pnl">
      <item>
-      <widget class="QPlainTextEdit" name="cmd_tf">
-       <property name="font">
-        <font>
-         <family>Consolas</family>
-         <pointsize>11</pointsize>
-        </font>
-       </property>
-       <property name="plainText">
+      <widget class="QLineEdit" name="cmd_tf">
+       <property name="text">
         <string/>
        </property>
       </widget>

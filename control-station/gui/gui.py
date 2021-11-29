@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '.\gui.ui'
+# Form implementation generated from reading ui file 'gui.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -18,7 +18,7 @@ class Ui_main_window(object):
         directory = str(pathlib.Path(__file__).parent.absolute())
 
         main_window.setObjectName("main_window")
-        main_window.resize(710, 381)
+        main_window.resize(710, 398)
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         font.setPointSize(11)
@@ -71,17 +71,13 @@ class Ui_main_window(object):
         self.stop_btn.setIconSize(QtCore.QSize(50, 50))
         self.stop_btn.setObjectName("stop_btn")
         self.horizontalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
-        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(10, 300, 291, 71))
+        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(10, 300, 291, 89))
         self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
         self.cmd_send_pnl = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
         self.cmd_send_pnl.setContentsMargins(0, 0, 0, 0)
         self.cmd_send_pnl.setObjectName("cmd_send_pnl")
-        self.cmd_tf = QtWidgets.QPlainTextEdit(self.horizontalLayoutWidget)
-        font = QtGui.QFont()
-        font.setFamily("Consolas")
-        font.setPointSize(11)
-        self.cmd_tf.setFont(font)
-        self.cmd_tf.setPlainText("")
+        self.cmd_tf = QtWidgets.QLineEdit(self.horizontalLayoutWidget)
+        self.cmd_tf.setText("")
         self.cmd_tf.setObjectName("cmd_tf")
         self.cmd_send_pnl.addWidget(self.cmd_tf)
         self.send_btn = QtWidgets.QPushButton(self.horizontalLayoutWidget)

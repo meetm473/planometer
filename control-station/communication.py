@@ -2,11 +2,13 @@ import socket
 import threading
 import logging
 import re
+from queue import Queue
 
 class Comm:
 
-	def __init__(self, vehicle_ip):
-
+	def __init__(self, vehicle_ip, queue):
+		
+		self.queue = queue
 		self.vehicle_ip  = vehicle_ip
 		self.TALKING_PORT = 1621
 		self.LISTENING_PORT = 1620
@@ -156,7 +158,11 @@ class Comm:
 			msg : str
 				Message string received by the node.
 		"""
-		if msg[0] == "#":
+		if msg[2] == "#":
+			coords = msg[3:len(msg)-1]
+			coords = coords.split(",")
+			coords = (float(coords[0]), float(coords[1]), float(coords[2]))
+			self.queue.put(coords)
 			print("Received GPS coordinates")
 		else:
 			print(msg)
